@@ -1,0 +1,1 @@
+start cmd /K java -jar "%~dp0target\flaretask-0.0.1-SNAPSHOT.jar"
