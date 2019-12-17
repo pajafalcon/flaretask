@@ -44,14 +44,14 @@ public class QuestionClientControllerRestTests {
     private void initMapperMockSingleton() {
         try {
             Field instance = QuestionClientResponseMapper.class.getDeclaredField("INSTANCE");
-            setFinalStatic(instance, mockMapper);
+            setFinalStaticField(instance, mockMapper);
         } catch ( Exception e ) {
             System.out.println(e.getMessage());
             throw new RuntimeException(e);
         }
     }
 
-    static void setFinalStatic( Field field, Object newValue ) throws Exception {
+    static void setFinalStaticField( Field field, Object newValue ) throws Exception {
         field.setAccessible(true);
 
         Field modifiersField = Field.class.getDeclaredField("modifiers");
