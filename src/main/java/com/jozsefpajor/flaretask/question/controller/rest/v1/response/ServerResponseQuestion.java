@@ -1,4 +1,4 @@
-package com.jozsefpajor.flaretask.question.controller.server.v1.response;
+package com.jozsefpajor.flaretask.question.controller.rest.v1.response;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;

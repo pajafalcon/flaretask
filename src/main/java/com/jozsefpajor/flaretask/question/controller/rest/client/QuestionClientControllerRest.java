@@ -1,8 +1,8 @@
-package com.jozsefpajor.flaretask.question.controller.client;
+package com.jozsefpajor.flaretask.question.controller.rest.client;
 
-import com.jozsefpajor.flaretask.question.controller.client.response.QuestionClientResponse;
-import com.jozsefpajor.flaretask.question.controller.client.response.QuestionClientResponseMapper;
-import com.jozsefpajor.flaretask.question.controller.client.response.QuestionClientResponseQuestion;
+import com.jozsefpajor.flaretask.question.controller.rest.client.response.QuestionClientResponse;
+import com.jozsefpajor.flaretask.question.controller.rest.client.response.QuestionClientResponseMapper;
+import com.jozsefpajor.flaretask.question.controller.rest.client.response.QuestionClientResponseQuestion;
 import com.jozsefpajor.flaretask.question.model.Question;
 import java.util.HashMap;
 import java.util.List;

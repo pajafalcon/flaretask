@@ -1,4 +1,4 @@
-package com.jozsefpajor.flaretask.question.controller;
+package com.jozsefpajor.flaretask.question.controller.rest;
 
 public interface DBInitControllerIf {
 

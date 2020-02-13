@@ -1,8 +1,8 @@
 package com.jozsefpajor.flaretask.test.unit.question.controller;
 
-import com.jozsefpajor.flaretask.question.controller.client.QuestionClientControllerRest;
-import com.jozsefpajor.flaretask.question.controller.client.response.QuestionClientResponse;
-import com.jozsefpajor.flaretask.question.controller.client.response.QuestionClientResponseMapper;
+import com.jozsefpajor.flaretask.question.controller.rest.client.QuestionClientControllerRest;
+import com.jozsefpajor.flaretask.question.controller.rest.client.response.QuestionClientResponse;
+import com.jozsefpajor.flaretask.question.controller.rest.client.response.QuestionClientResponseMapper;
 import com.jozsefpajor.flaretask.question.model.Question;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;

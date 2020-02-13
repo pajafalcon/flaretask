@@ -1,4 +1,4 @@
-package com.jozsefpajor.flaretask.question.controller;
+package com.jozsefpajor.flaretask.question.controller.rest;
 
 import com.jozsefpajor.flaretask.question.model.Question;
 import com.jozsefpajor.flaretask.question.service.QuestionServiceIf;
@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import com.jozsefpajor.flaretask.question.controller.client.QuestionClientControllerIf;
+import com.jozsefpajor.flaretask.question.controller.rest.client.QuestionClientControllerIf;
 
 /**
  *
