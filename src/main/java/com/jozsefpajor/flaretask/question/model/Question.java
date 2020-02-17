@@ -3,24 +3,16 @@ package com.jozsefpajor.flaretask.question.model;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Fetch;
 
 /**
- *
  * @author PJ
  */
 @Entity
@@ -46,9 +38,9 @@ public class Question {
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 
-    @ManyToMany(cascade = {
-        CascadeType.MERGE
-    })
+    @ManyToMany(
+            cascade = {CascadeType.MERGE},
+            fetch = FetchType.EAGER)
     @JoinTable(
             name = "question_tag",
             joinColumns = @JoinColumn(name = "question_1"),
