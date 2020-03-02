@@ -2,7 +2,7 @@ package com.jozsefpajor.flaretask.test.unit.question.controller;
 
 import com.jozsefpajor.flaretask.exception.NotFoundException;
 import com.jozsefpajor.flaretask.question.controller.rest.v1.QuestionServerController;
-import com.jozsefpajor.flaretask.question.controller.rest.v1.response.ServerResponseQuestion;
+import com.jozsefpajor.flaretask.question.controller.rest.v1.response.QuestionDTO;
 import com.jozsefpajor.flaretask.question.model.Question;
 import com.jozsefpajor.flaretask.question.model.Tag;
 import com.jozsefpajor.flaretask.question.service.QuestionServiceIf;
@@ -115,7 +115,7 @@ public class QuestionServerControllerTests {
                 .thenReturn(Lists.list(question));
 
         // when
-        List<ServerResponseQuestion> responseQuestionList
+        List<QuestionDTO> responseQuestionList
                 = questionServerController.getQuestions(tagName);
 
         // then
@@ -123,7 +123,7 @@ public class QuestionServerControllerTests {
         assertNotNull(responseQuestionList);
         assertTrue(responseQuestionList.size() == 1);
 
-        ServerResponseQuestion responseQuestion = responseQuestionList.get(0);
+        QuestionDTO responseQuestion = responseQuestionList.get(0);
         assertTrue(mappingIsOk(responseQuestion));
     }
 
@@ -199,9 +199,9 @@ public class QuestionServerControllerTests {
                 .build();
     }
 
-    private boolean mappingIsOk( ServerResponseQuestion q ) {
+    private boolean mappingIsOk( QuestionDTO q ) {
         return q.getCreationDate().equals(new Date(0L))
-                && q.getAswered() == true
+                && q.getAnswered() == true
                 && q.getAnswerCount() == -2L
                 && q.getAskerId() == -3L
                 && q.getId() == -5L // id in response is the originalid of the question

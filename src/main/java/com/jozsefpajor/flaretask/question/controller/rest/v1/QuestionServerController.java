@@ -1,7 +1,7 @@
 package com.jozsefpajor.flaretask.question.controller.rest.v1;
 
 import com.jozsefpajor.flaretask.exception.NotFoundException;
-import com.jozsefpajor.flaretask.question.controller.rest.v1.response.ServerResponseQuestion;
+import com.jozsefpajor.flaretask.question.controller.rest.v1.response.QuestionDTO;
 import com.jozsefpajor.flaretask.question.model.Question;
 import com.jozsefpajor.flaretask.question.model.Tag;
 import com.jozsefpajor.flaretask.question.service.QuestionServiceIf;
@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,11 +34,12 @@ public class QuestionServerController {
     }
 
     @GetMapping(value = {"", "/"})
-    public List<ServerResponseQuestion> getQuestions(
+    @CrossOrigin
+    public List<QuestionDTO> getQuestions(
             @RequestParam(value = "tag", required = false) String tag )
             throws NotFoundException {
 
-        List<Question> questions;
+        List<Question> questions = null;
 
         if ( tag != null && !tag.isEmpty() ) {
             questions = questionService.getQuestrionsByTagName(tag);
@@ -53,12 +55,12 @@ public class QuestionServerController {
             throw new NotFoundException(message);
         }
 
-        List<ServerResponseQuestion> questionResponseList = mapQuestionList(questions);
+        List<QuestionDTO> questionResponseList = mapQuestionList(questions);
         return questionResponseList;
     }
 
     @GetMapping("/{originalId}")
-    public ServerResponseQuestion getQuestionByOriginalId(
+    public QuestionDTO getQuestionByOriginalId(
             @PathVariable(value = "originalId") Long originalId ) throws Exception {
 
         Question question = questionService.getQuestionByOriginalId(originalId);
@@ -84,17 +86,17 @@ public class QuestionServerController {
         }
     }
 
-    private List<ServerResponseQuestion> mapQuestionList( List<Question> questions ) {
+    private List<QuestionDTO> mapQuestionList( List<Question> questions ) {
         return questions.stream()
                 .map(this::mapQuestion)
                 .collect(Collectors.toList());
     }
 
-    private ServerResponseQuestion mapQuestion( Question question ) {
-        return ServerResponseQuestion.builder()
+    private QuestionDTO mapQuestion( Question question ) {
+        return QuestionDTO.builder()
                 .answerCount(question.getAnswerCount())
                 .askerId(question.getAskerUserId())
-                .aswered(isAnswered(question))
+                .answered(isAnswered(question))
                 .creationDate(question.getCreatedAt())
                 .id(question.getOriginalId())
                 .tagNames(mapTags(question.getTags()))

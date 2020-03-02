@@ -21,7 +21,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ServerResponseQuestion {
+public class QuestionDTO {
 
     @JsonProperty("id")
     private Long id;
@@ -29,8 +29,8 @@ public class ServerResponseQuestion {
     @JsonProperty("tags")
     private List<String> tagNames;
 
-    @JsonProperty("is_answered")
-    private Boolean aswered;
+    @JsonProperty("answered")
+    private Boolean answered;
 
     @JsonProperty("view_count")
     private Long viewCount;
