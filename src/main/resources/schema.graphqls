@@ -1,24 +1,12 @@
 type Question {
-    id: ID!
-    originalId: Long
-    acceptedAnswerId: Long
-    viewCount: Long
-    answerCount: Long
-    askerUserId: Long
-    createdAt: String
-    tags:[Tag]
+
+    userId: ID!
+    creationDate: Long
+    displayName: String!
 }
 
-type Tag {
-    id: ID
-    tagName: String
-}
 
 type Query {
-    findAllQuestion: [Question]!
-    findQuestionsByTag(tagname: String!): [Question]!
+    getUserById(id: Long!): [User]!
 }
 
-type Mutation {
-    deleteQuestion(id: ID!): Boolean!
-}

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
  *
  * @author PJ
  */
-@Service
 public interface UserServiceIf {
 
     User getUserByOriginalId( Long id );

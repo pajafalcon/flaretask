@@ -1,4 +1,4 @@
-package com.jozsefpajor.flaretask.user.controller.server.v1;
+package com.jozsefpajor.flaretask.user.controller.rest.server.v1;
 
 import com.jozsefpajor.flaretask.exception.NotFoundException;
 import com.jozsefpajor.flaretask.user.model.User;

@@ -1,7 +1,7 @@
 package com.jozsefpajor.flaretask.user.service;
 
 import com.jozsefpajor.flaretask.config.CacheConfig;
-import com.jozsefpajor.flaretask.user.controller.client.UserClientControllerIf;
+import com.jozsefpajor.flaretask.user.controller.rest.client.UserClientControllerIf;
 import com.jozsefpajor.flaretask.user.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;

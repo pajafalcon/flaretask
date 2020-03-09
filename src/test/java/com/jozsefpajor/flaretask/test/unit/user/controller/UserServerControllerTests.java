@@ -1,7 +1,7 @@
 package com.jozsefpajor.flaretask.test.unit.user.controller;
 
 import com.jozsefpajor.flaretask.exception.NotFoundException;
-import com.jozsefpajor.flaretask.user.controller.server.v1.UserServerController;
+import com.jozsefpajor.flaretask.user.controller.rest.server.v1.UserServerController;
 import com.jozsefpajor.flaretask.user.model.User;
 import com.jozsefpajor.flaretask.user.service.UserServiceIf;
 import static org.junit.jupiter.api.Assertions.*;

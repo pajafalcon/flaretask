@@ -2,7 +2,7 @@ package com.jozsefpajor.flaretask.test.unit.question.controller;
 
 import com.jozsefpajor.flaretask.exception.NotFoundException;
 import com.jozsefpajor.flaretask.question.controller.rest.v1.QuestionServerController;
-import com.jozsefpajor.flaretask.question.controller.rest.v1.response.QuestionDTO;
+import com.jozsefpajor.flaretask.question.controller.rest.v1.QuestionDTO;
 import com.jozsefpajor.flaretask.question.model.Question;
 import com.jozsefpajor.flaretask.question.model.Tag;
 import com.jozsefpajor.flaretask.question.service.QuestionServiceIf;

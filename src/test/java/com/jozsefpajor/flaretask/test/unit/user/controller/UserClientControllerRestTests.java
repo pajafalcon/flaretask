@@ -1,7 +1,7 @@
 package com.jozsefpajor.flaretask.test.unit.user.controller;
 
-import com.jozsefpajor.flaretask.user.controller.client.UserClientControllerRest;
-import com.jozsefpajor.flaretask.user.controller.client.response.UserClientResponse;
+import com.jozsefpajor.flaretask.user.controller.rest.client.UserClientControllerRest;
+import com.jozsefpajor.flaretask.user.controller.rest.client.response.UserClientResponse;
 import com.jozsefpajor.flaretask.user.model.User;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
