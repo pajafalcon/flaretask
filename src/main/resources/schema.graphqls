@@ -1,5 +1,4 @@
-type Question {
-
+type User {
     userId: ID!
     creationDate: Long
     displayName: String!
@@ -7,6 +6,6 @@ type Question {
 
 
 type Query {
-    getUserById(id: Long!): [User]!
+    getUserById(id: Long!): User
 }
 
